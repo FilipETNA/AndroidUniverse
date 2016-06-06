@@ -18,7 +18,7 @@ public class PlaceService {
 
 
     private static final String TAG = "PlaceService";
-    private static final String API_KEY = "AIzaSyB5syZcBt8NvDspWWm-0KsQ9hkRBxT_KYo";
+    private static final String API_KEY = "GOOGLE_API_KEY";
     private static final String URL_SEARCH = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
     private static final String URL_DETAIL = "https://maps.googleapis.com/maps/api/place/details/json?";
     private HttpClient client_search;
