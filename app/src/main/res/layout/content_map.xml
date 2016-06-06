@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="etna.androiduniverse.MapActivity"
+    tools:showIn="@layout/map_activity">
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        class="etna.androiduniverse.components.ScrollableMapFragment"
+        tools:context="etna.androiduniverse.Test" />
+
+    <RelativeLayout
+        android:id="@+id/detail_view"
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/map"
+        android:layout_alignParentBottom="true"
+        android:padding="15dp">
+
+        <!--<TextView-->
+            <!--android:id="@+id/distance"-->
+            <!--android:text="1.1 km"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:textColor="#000"-->
+            <!--android:layout_marginEnd="15dp"-->
+            <!--android:textSize="14sp" />-->
+
+        <TextView
+            android:id="@+id/detail_place_name"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Le pergola"
+            android:layout_toStartOf="@+id/place_distance" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.1 km"
+            android:id="@+id/place_distance"
+            android:layout_alignBottom="@+id/detail_place_name"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:textColor="#000"
+            android:layout_alignTop="@+id/detail_place_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="125 Avenue Paul Vaillant Couturier, 94400 Vitry-sur-Seine"
+            android:id="@+id/detail_place_address"
+            android:layout_below="@+id/detail_place_name"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/place_distance"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/detail_place_picture"
+            android:contentDescription="@string/place_picture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/detail_place_address"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="10dp" />
+
+
+        <TextView
+            android:drawableStart="@drawable/ic_phone"
+            android:tint="@color/colorPrimary"
+            android:text="01 02 03 04 05"
+            android:drawablePadding="15dp"
+            android:textSize="16sp"
+            android:autoLink="phone"
+            android:id="@+id/detail_place_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textIsSelectable="false"
+            android:textColor="@color/black"
+            android:layout_below="@+id/detail_place_picture"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/detail_place_rating"
+            android:layout_alignParentBottom="true" />
+
+        <TextView
+            android:id="@+id/detail_place_rating"
+            android:drawableStart="@drawable/ic_star"
+            android:drawableTint="@color/colorPrimary"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="4.7 / 5"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/detail_place_picture"
+            android:layout_alignTop="@+id/detail_place_phone"
+            android:layout_alignEnd="@+id/detail_place_picture" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
